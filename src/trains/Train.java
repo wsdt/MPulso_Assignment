@@ -1,5 +1,6 @@
 package trains;
 
+import exceptions.ConstraintViolation;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import sys.SYS_Logger;
@@ -114,8 +115,8 @@ public class Train {
     }
 
     public void setLocomotiveSet(@NotNull LinkedHashSet<TP_Locomotive> locomotiveSet) {
-        if (locomotiveSet == null || locomotiveSet.size() <= 0) {
-
+        if (locomotiveSet.size() <= 0) {
+            throw new ConstraintViolation("A train needs at least one locomotive!");
         }
         this.locomotiveSet = locomotiveSet;
     }

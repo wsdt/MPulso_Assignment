@@ -1,6 +1,6 @@
 package actors;
 
-import exceptions.PhysicsViolation;
+import exceptions.ConstraintViolation;
 import org.jetbrains.annotations.NotNull;
 import trains.Train;
 import trains.train_pieces.TPa_TrainPiece;
@@ -29,7 +29,7 @@ public class RailroadCompany {
             allPiecesOfAllTrains.addAll(mergedSet);
         }
         if (allPiecesOfAllTrains.size() != originalSize) {
-            throw new PhysicsViolation("A train part cannot exist on two or more locations at the same time.");
+            throw new ConstraintViolation("A train part cannot exist on two or more locations at the same time.");
         }
     }
 
@@ -40,6 +40,6 @@ public class RailroadCompany {
 
     public void setOwnedTrains(@NotNull Set<Train> ownedTrains) {
         this.ownedTrains = ownedTrains;
-        semanticValidation();
+        semanticValidation(); //after setting!
     }
 }
