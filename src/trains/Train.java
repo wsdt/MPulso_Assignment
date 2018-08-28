@@ -1,10 +1,11 @@
-import actors.RailroadCompany;
-import com.sun.istack.internal.NotNull;
-import com.sun.istack.internal.Nullable;
+package trains;
+
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import sys.SYS_Logger;
-import train_pieces.TP_Locomotive;
-import train_pieces.TP_Wagon;
-import train_pieces.TPa_TrainPiece;
+import trains.train_pieces.TP_Locomotive;
+import trains.train_pieces.TP_Wagon;
+import trains.train_pieces.TPa_TrainPiece;
 
 import java.util.HashSet;
 import java.util.LinkedHashSet;
@@ -38,17 +39,14 @@ public class Train {
      */
     private LinkedHashSet<TP_Locomotive> locomotiveSet;
     private LinkedHashSet<TP_Wagon> wagonSet;
-    private RailroadCompany railroadCompany;
 
-    public Train(@NotNull LinkedHashSet<TP_Locomotive> locomotiveSet, @NotNull RailroadCompany railroadCompany) {
+    public Train(@NotNull LinkedHashSet<TP_Locomotive> locomotiveSet) {
         this.setLocomotiveSet(locomotiveSet);
-        this.setRailroadCompany(railroadCompany);
     }
 
-    public Train(@NotNull LinkedHashSet<TP_Locomotive> locomotiveSet, @Nullable LinkedHashSet<TP_Wagon> wagonSet, @NotNull RailroadCompany railroadCompany) {
+    public Train(@NotNull LinkedHashSet<TP_Locomotive> locomotiveSet, @Nullable LinkedHashSet<TP_Wagon> wagonSet) {
         this.setLocomotiveSet(locomotiveSet);
         this.setWagonSet(wagonSet);
-        this.setRailroadCompany(railroadCompany);
     }
 
     /**
@@ -104,7 +102,7 @@ public class Train {
      *
      * But with the given constraints is I think a safe bet (except I add some further validations which would be better).
      */
-    private Set<TPa_TrainPiece> mergeTrainPiecesToSet() {
+    public Set<TPa_TrainPiece> mergeTrainPiecesToSet() {
         Set<TPa_TrainPiece> trainPieces = new HashSet<>(this.getWagonSet());
         trainPieces.addAll(this.getLocomotiveSet());
         return trainPieces;
@@ -128,13 +126,5 @@ public class Train {
 
     public void setWagonSet(@Nullable LinkedHashSet<TP_Wagon> wagonSet) {
         this.wagonSet = wagonSet;
-    }
-
-    public RailroadCompany getRailroadCompany() {
-        return railroadCompany;
-    }
-
-    public void setRailroadCompany(@NotNull RailroadCompany railroadCompany) {
-        this.railroadCompany = railroadCompany;
     }
 }

@@ -1,7 +1,7 @@
 package sys;
 
-import com.sun.istack.internal.NotNull;
 import exceptions.LoggerSetupFailed;
+import org.jetbrains.annotations.NotNull;
 
 import java.io.IOException;
 import java.util.GregorianCalendar;

@@ -1,19 +1,24 @@
-package train_pieces;
+package trains.train_pieces;
 
 import actors.Manufacturer;
 import actors.Passenger;
-import com.sun.istack.internal.NotNull;
 import helper.SerialNumber;
+import org.jetbrains.annotations.NotNull;
 import propulsion_methods.PMa_PropulsionMethod;
+
 
 import java.time.Year;
 import java.util.Set;
 
 public class TP_Locomotive extends TPa_TrainPiece {
-    /** Zugkraft, how much weight can the locomotive pull (additional
-     * to emptyWeight) */
+    /**
+     * Zugkraft, how much weight can the locomotive pull (additional
+     * to emptyWeight)
+     */
     private double tractionForce;
-    /** E.g. Diesel, Steam, Electric etc. */
+    /**
+     * E.g. Diesel, Steam, Electric etc.
+     */
     private PMa_PropulsionMethod propulsionMethod;
 
     public TP_Locomotive(String typeClassification, Manufacturer manufacturer, Year buildYear, SerialNumber serialNumber,

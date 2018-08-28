@@ -1,11 +1,11 @@
-package train_pieces;
+package trains.train_pieces;
 
 import actors.Manufacturer;
 import actors.Passenger;
 import actors.TicketCollector;
-import com.sun.istack.internal.NotNull;
-import com.sun.istack.internal.Nullable;
 import helper.SerialNumber;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import sys.SYS_Logger;
 
 import java.time.Year;
@@ -13,9 +13,6 @@ import java.util.HashSet;
 import java.util.Set;
 
 public abstract class TPa_TrainPiece {
-    //TODO: Set reliable or use another solution
-    /** If true this trainPart is already attached to a train.*/
-    private boolean alreadyUsed = false;
     /** Use of set as every passenger is unique. But order shouldn't matter so a normal (hash-)Set should be enough. */
     private Set<Passenger> passengerSet;
     /** Leergewicht */
@@ -159,14 +156,6 @@ public abstract class TPa_TrainPiece {
 
     public void setTicketCollectorSet(Set<TicketCollector> ticketCollectorSet) {
         this.ticketCollectorSet = ticketCollectorSet;
-    }
-
-    public boolean isAlreadyUsed() {
-        return alreadyUsed;
-    }
-
-    public void setAlreadyUsed(boolean alreadyUsed) {
-        this.alreadyUsed = alreadyUsed;
     }
 
     public double getMaxCapacityPassengers() {

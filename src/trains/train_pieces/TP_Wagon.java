@@ -1,4 +1,4 @@
-package train_pieces;
+package trains.train_pieces;
 
 import actors.Manufacturer;
 import actors.Passenger;

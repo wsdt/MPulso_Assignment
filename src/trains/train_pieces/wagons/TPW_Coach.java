@@ -1,9 +1,9 @@
-package train_pieces.wagons;
+package trains.train_pieces.wagons;
 
 import actors.Manufacturer;
 import actors.Passenger;
 import helper.SerialNumber;
-import train_pieces.TP_Wagon;
+import trains.train_pieces.TP_Wagon;
 
 import java.time.Year;
 import java.util.Set;
