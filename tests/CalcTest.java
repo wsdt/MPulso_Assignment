@@ -75,11 +75,11 @@ class CalcTest {
 
     @Test
     void cumulData_maxCapOverall() {
-        assertEquals(3750d, CalcTest.train.getCumulatedData(Train.QUERY_MODE.MAX_CAPACITY_OVERALL));
+        assertEquals(1900d, CalcTest.train.getCumulatedData(Train.QUERY_MODE.MAX_CAPACITY_OVERALL));
     }
 
     @Test
     void cumulData_maxTrainWeight() {
-        assertEquals(3775d, CalcTest.train.getCumulatedData(Train.QUERY_MODE.MAX_TRAIN_WEIGHT));
+        assertEquals(1925d, CalcTest.train.getCumulatedData(Train.QUERY_MODE.MAX_TRAIN_WEIGHT));
     }
 }
