@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="61df8e4b-1692-43bb-bd05-f868aeb3bd57" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/tests/sys/SYS_LoggerTest.java" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/tests/CalcTest.java" afterPath="$PROJECT_DIR$/tests/CalcTest.java" />
+      <change beforePath="$PROJECT_DIR$/src/main.java" afterPath="$PROJECT_DIR$/src/Main.java" />
+      <change beforePath="$PROJECT_DIR$/src/sys/SYS_Logger.java" afterPath="$PROJECT_DIR$/src/sys/SYS_Logger.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -15,16 +17,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="CalcTest.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/tests/CalcTest.java">
+      <file leaf-file-name="SYS_LoggerTest.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/tests/sys/SYS_LoggerTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="82" column="25" lean-forward="false" selection-start-line="82" selection-start-column="25" selection-end-line="82" selection-end-column="25" />
+            <state relative-caret-position="525">
+              <caret line="25" column="5" lean-forward="true" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
               <folding>
-                <element signature="e#2167#2168#0" expanded="true" />
-                <element signature="e#2264#2265#0" expanded="true" />
-                <element signature="e#2310#2311#0" expanded="true" />
-                <element signature="e#2407#2408#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#153#154#0" expanded="true" />
+                <element signature="e#207#208#0" expanded="true" />
+                <element signature="e#241#242#0" expanded="true" />
+                <element signature="e#294#295#0" expanded="true" />
+                <element signature="e#326#327#0" expanded="true" />
+                <element signature="e#377#378#0" expanded="true" />
+                <element signature="e#409#410#0" expanded="true" />
+                <element signature="e#460#461#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -56,15 +63,11 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/train_piece/Locomotive.java" />
-        <option value="$PROJECT_DIR$/src/train_piece/Wagon.java" />
         <option value="$PROJECT_DIR$/src/propulsion_methods/PMa_PropulsionMethod.java" />
         <option value="$PROJECT_DIR$/src/propulsion_methods/PM_Steam.java" />
         <option value="$PROJECT_DIR$/src/propulsion_methods/PM_Electric.java" />
         <option value="$PROJECT_DIR$/src/propulsion_methods/PM_Diesel.java" />
         <option value="$PROJECT_DIR$/src/sys/exceptions/LoggerSetupFailed.java" />
-        <option value="$PROJECT_DIR$/src/main.java" />
-        <option value="$PROJECT_DIR$/src/main.java" />
         <option value="$PROJECT_DIR$/src/exceptions/SerialNumberMalformed.java" />
         <option value="$PROJECT_DIR$/src/train_pieces/wagons/PassengerCar.java" />
         <option value="$PROJECT_DIR$/src/actors/TicketCollector.java" />
@@ -87,7 +90,6 @@
         <option value="$PROJECT_DIR$/src/Train.java" />
         <option value="$PROJECT_DIR$/src/Train.java" />
         <option value="$PROJECT_DIR$/src/exceptions/PhysicsViolation.java" />
-        <option value="$PROJECT_DIR$/src/sys/SYS_Logger.java" />
         <option value="$PROJECT_DIR$/tests/exceptions/PhysicsViolationTest.java" />
         <option value="$PROJECT_DIR$/tests/exceptions/LoggerSetupFailedTest.java" />
         <option value="$PROJECT_DIR$/tests/exceptions/SerialNumberMalformedTest.java" />
@@ -107,6 +109,11 @@
         <option value="$PROJECT_DIR$/tests/InstantiationTest.java" />
         <option value="$PROJECT_DIR$/src/trains/Train.java" />
         <option value="$PROJECT_DIR$/tests/CalcTest.java" />
+        <option value="$PROJECT_DIR$/tests/sys/SYS_LoggerTest.java" />
+        <option value="$PROJECT_DIR$/src/sys/SYS_Logger.java" />
+        <option value="$PROJECT_DIR$/src/main.java" />
+        <option value="$PROJECT_DIR$/src/main.java" />
+        <option value="$PROJECT_DIR$/src/Main.java" />
       </list>
     </option>
   </component>
@@ -171,14 +178,14 @@
               <item name="MPulso_Assignment" type="b2602c69:ProjectViewProjectNode" />
               <item name="MPulso_Assignment" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="sys" type="462c0819:PsiDirectoryNode" />
+              <item name="helper" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="MPulso_Assignment" type="b2602c69:ProjectViewProjectNode" />
               <item name="MPulso_Assignment" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="sys" type="462c0819:PsiDirectoryNode" />
-              <item name="SYS_Logger" type="1a9f42e2:ClassTreeNode" />
+              <item name="helper" type="462c0819:PsiDirectoryNode" />
+              <item name="SerialNumber" type="1a9f42e2:ClassTreeNode" />
             </path>
             <path>
               <item name="MPulso_Assignment" type="b2602c69:ProjectViewProjectNode" />
@@ -216,6 +223,12 @@
               <item name="MPulso_Assignment" type="b2602c69:ProjectViewProjectNode" />
               <item name="MPulso_Assignment" type="462c0819:PsiDirectoryNode" />
               <item name="tests" type="462c0819:PsiDirectoryNode" />
+              <item name="sys" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MPulso_Assignment" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MPulso_Assignment" type="462c0819:PsiDirectoryNode" />
+              <item name="tests" type="462c0819:PsiDirectoryNode" />
               <item name="CalcTest" type="1a9f42e2:ClassTreeNode" />
             </path>
             <path>
@@ -246,18 +259,18 @@
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="sys" />
       <recent name="actors" />
       <recent name="exceptions" />
       <recent name="exceptions.tests" />
       <recent name="exceptions.test" />
-      <recent name="unit_tests.exceptions" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="" />
       <recent name="exceptions" />
-    </key>
-    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -282,6 +295,20 @@
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <module />
     </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="MPulso" />
+      <envs />
+    </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" />
@@ -294,20 +321,6 @@
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
       <module name="" />
-      <envs />
-    </configuration>
-    <configuration name="main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" value="main" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="MPulso" />
       <envs />
     </configuration>
     <configuration name="All in MPulso" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
@@ -436,7 +449,7 @@
       <predefined_log_file id="idea.log" enabled="true" />
     </configuration>
     <list size="4">
-      <item index="0" class="java.lang.String" itemvalue="Application.main" />
+      <item index="0" class="java.lang.String" itemvalue="Application.Main" />
       <item index="1" class="java.lang.String" itemvalue="JUnit.All in MPulso" />
       <item index="2" class="java.lang.String" itemvalue="JUnit.actors in MPulso" />
       <item index="3" class="java.lang.String" itemvalue="JUnit.InstantiationWithSerialNumbersTest" />
@@ -446,7 +459,7 @@
         <item index="0" class="java.lang.String" itemvalue="JUnit.All in MPulso" />
         <item index="1" class="java.lang.String" itemvalue="JUnit.InstantiationWithSerialNumbersTest" />
         <item index="2" class="java.lang.String" itemvalue="JUnit.actors in MPulso" />
-        <item index="3" class="java.lang.String" itemvalue="Application.main" />
+        <item index="3" class="java.lang.String" itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -479,17 +492,11 @@
       <workItem from="1535397689981" duration="6613000" />
       <workItem from="1535417488026" duration="9933000" />
       <workItem from="1535427599152" duration="14671000" />
-      <workItem from="1535563452906" duration="287000" />
+      <workItem from="1535563452906" duration="1364000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="All_in_MPulso - 2018.08.29 at 02h 20m 10s.xml">
-      <configuration name="All in MPulso" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="All_in_MPulso - 2018.08.29 at 02h 31m 58s.xml">
-      <configuration name="All in MPulso" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="All_in_MPulso - 2018.08.29 at 02h 32m 54s.xml">
       <configuration name="All in MPulso" configurationId="JUnit" />
     </history-entry>
@@ -514,9 +521,15 @@
     <history-entry file="All_in_MPulso - 2018.08.29 at 19h 25m 09s.xml">
       <configuration name="All in MPulso" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="All_in_MPulso - 2018.08.29 at 19h 29m 31s.xml">
+      <configuration name="All in MPulso" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="All_in_MPulso - 2018.08.29 at 19h 43m 31s.xml">
+      <configuration name="All in MPulso" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="31504000" />
+    <option name="totallyTimeSpent" value="32581000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -540,7 +553,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28253224" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28253224" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32942554" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -587,7 +600,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main.java">
+    <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="6" column="43" lean-forward="true" selection-start-line="6" selection-start-column="43" selection-end-line="6" selection-end-column="43" />
@@ -606,13 +619,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="42">
           <caret line="2" column="53" lean-forward="false" selection-start-line="2" selection-start-column="53" selection-end-line="2" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/propulsion_methods/PMa_PropulsionMethod.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="2" column="16" lean-forward="true" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
         </state>
       </provider>
     </entry>
@@ -648,14 +654,6 @@
     <entry file="file://$PROJECT_DIR$/src/exceptions/test/LoggerSetupFailedTest.java" />
     <entry file="file://$PROJECT_DIR$/src/exceptions/LoggerSetupFailedTest.java" />
     <entry file="file://$PROJECT_DIR$/src/exceptions/tests/LoggerSetupFailedTest.java" />
-    <entry file="file://$PROJECT_DIR$/src/main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/train_pieces/TP_FACTORY.java" />
     <entry file="file://$PROJECT_DIR$/src/actors/TicketCollector.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -671,18 +669,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sys/SYS_Logger.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="22" column="26" lean-forward="true" selection-start-line="22" selection-start-column="26" selection-end-line="22" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/exceptions/LoggerSetupFailed.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="63">
           <caret line="3" column="25" lean-forward="true" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="25" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -722,37 +713,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/helper/SerialNumber.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="430">
-          <caret line="52" column="54" lean-forward="false" selection-start-line="52" selection-start-column="54" selection-end-line="52" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/propulsion_methods/PM_Diesel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="42">
           <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/actors/RailroadCompany.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
-          <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-          <folding>
-            <element signature="e#433#434#0" expanded="false" />
-            <element signature="e#481#482#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/trains/train_pieces/TP_Wagon.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="19" column="5" lean-forward="false" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -799,6 +763,80 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/tests/InstantiationTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="41" column="67" lean-forward="false" selection-start-line="41" selection-start-column="67" selection-end-line="41" selection-end-column="67" />
+          <folding>
+            <element signature="e#1000#1001#0" expanded="false" />
+            <element signature="e#1068#1069#0" expanded="false" />
+            <element signature="e#4308#4309#0" expanded="false" />
+            <element signature="e#4360#4361#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/CalcTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="71" column="39" lean-forward="true" selection-start-line="71" selection-start-column="39" selection-end-line="71" selection-end-column="39" />
+          <folding>
+            <element signature="e#2167#2168#0" expanded="true" />
+            <element signature="e#2264#2265#0" expanded="true" />
+            <element signature="e#2310#2311#0" expanded="true" />
+            <element signature="e#2407#2408#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/actors/RailroadCompany.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sys/SYS_Logger.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="666">
+          <caret line="47" column="5" lean-forward="false" selection-start-line="47" selection-start-column="5" selection-end-line="47" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/propulsion_methods/PMa_PropulsionMethod.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="2" column="16" lean-forward="true" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/helper/SerialNumber.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="679">
+          <caret line="51" column="0" lean-forward="true" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/trains/train_pieces/TP_Locomotive.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="284">
+          <caret line="25" column="15" lean-forward="false" selection-start-line="25" selection-start-column="15" selection-end-line="25" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/trains/train_pieces/TP_Wagon.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="19" column="5" lean-forward="false" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/trains/train_pieces/TPa_TrainPiece.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="257">
@@ -836,43 +874,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/trains/Item.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="21" column="42" lean-forward="true" selection-start-line="21" selection-start-column="42" selection-end-line="21" selection-end-column="42" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#199#200#0" expanded="false" />
-            <element signature="e#237#238#0" expanded="false" />
-            <element signature="e#328#329#0" expanded="false" />
-            <element signature="e#357#358#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/InstantiationTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="41" column="67" lean-forward="false" selection-start-line="41" selection-start-column="67" selection-end-line="41" selection-end-column="67" />
-          <folding>
-            <element signature="e#1000#1001#0" expanded="false" />
-            <element signature="e#1068#1069#0" expanded="false" />
-            <element signature="e#4308#4309#0" expanded="false" />
-            <element signature="e#4360#4361#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/trains/train_pieces/TP_Locomotive.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="284">
-          <caret line="25" column="15" lean-forward="false" selection-start-line="25" selection-start-column="15" selection-end-line="25" selection-end-column="15" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/trains/Train.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="21">
@@ -881,15 +882,36 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/CalcTest.java">
+    <entry file="file://$PROJECT_DIR$/src/trains/Item.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="82" column="25" lean-forward="false" selection-start-line="82" selection-start-column="25" selection-end-line="82" selection-end-column="25" />
+        <state relative-caret-position="336">
+          <caret line="21" column="42" lean-forward="true" selection-start-line="21" selection-start-column="42" selection-end-line="21" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/sys/SYS_LoggerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="25" column="5" lean-forward="true" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
           <folding>
-            <element signature="e#2167#2168#0" expanded="true" />
-            <element signature="e#2264#2265#0" expanded="true" />
-            <element signature="e#2310#2311#0" expanded="true" />
-            <element signature="e#2407#2408#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#153#154#0" expanded="true" />
+            <element signature="e#207#208#0" expanded="true" />
+            <element signature="e#241#242#0" expanded="true" />
+            <element signature="e#294#295#0" expanded="true" />
+            <element signature="e#326#327#0" expanded="true" />
+            <element signature="e#377#378#0" expanded="true" />
+            <element signature="e#409#410#0" expanded="true" />
+            <element signature="e#460#461#0" expanded="true" />
           </folding>
         </state>
       </provider>

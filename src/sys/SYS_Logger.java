@@ -46,8 +46,4 @@ public class SYS_Logger {
         }
         return logger;
     }
-
-    protected static void setLogger(@NotNull Logger logger) {
-        SYS_Logger.logger = logger;
-    }
 }
