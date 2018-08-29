@@ -16,7 +16,7 @@ public class Train {
     /**
      * Made an enum to remove appr. 3/4 other methods and combine them into one.
      */
-    enum QUERY_MODE {
+    public enum QUERY_MODE {
         MAX_CAPACITY_ITEMS(0), EMPTY_WEIGHT(1), TRAIN_LENGTH(2),
         TICKET_COLLECTORS(3), MAX_CAPACITY_PASSENGERS(4), MAX_CAPACITY_OVERALL(5),
         MAX_TRAIN_WEIGHT(6);
@@ -35,7 +35,7 @@ public class Train {
     /**
      * Bc. of Sets no cycles should be possible as every wagon/locomotive is unique.
      * Used LinkedHashSets to persist order as it matters here.
-     *
+     * <p>
      * Separated both, so possible independent queries could be done in future.
      */
     private LinkedHashSet<TP_Locomotive> locomotiveSet;
@@ -83,10 +83,10 @@ public class Train {
                 break;
             case MAX_CAPACITY_OVERALL:
                 // *75kg, as we assume that a passenger weights 75kg in average.
-                overall = getCumulatedData(QUERY_MODE.MAX_CAPACITY_ITEMS)+(getCumulatedData(QUERY_MODE.MAX_CAPACITY_PASSENGERS)*75);
+                overall = getCumulatedData(QUERY_MODE.MAX_CAPACITY_ITEMS) + (getCumulatedData(QUERY_MODE.MAX_CAPACITY_PASSENGERS) * 75);
                 break;
             case MAX_TRAIN_WEIGHT:
-                overall = getCumulatedData(QUERY_MODE.MAX_CAPACITY_OVERALL)+getCumulatedData(QUERY_MODE.EMPTY_WEIGHT);
+                overall = getCumulatedData(QUERY_MODE.MAX_CAPACITY_OVERALL) + getCumulatedData(QUERY_MODE.EMPTY_WEIGHT);
                 break;
             default:
                 SYS_Logger.getLogger().severe("Could not accumulate/summarize desired data, as query mode is not supported -> " + query_mode);
@@ -96,17 +96,38 @@ public class Train {
 
     /**
      * Small helper method to make code cleaner
-     *
+     * <p>
      * POSSIBLE IMPROVEMENT: If we assume that trainPieces don't change (or we implement an observer or similar) --> then we could add an additional Set with all merged.
      * or/and we know that we don't need (or at least not usually) locomotive/wagon sets separated
      * I would HIGHLY RECOMMEND to remove this method as it is not a fast operation and add ONE HashSet (e.g. LinkedHashSet<Tpa_TrainPiece>).
-     *
+     * <p>
      * But with the given constraints is I think a safe bet (except I add some further validations which would be better).
      */
     public Set<TPa_TrainPiece> mergeTrainPiecesToSet() {
-        Set<TPa_TrainPiece> trainPieces = new HashSet<>(this.getWagonSet());
-        trainPieces.addAll(this.getLocomotiveSet());
+        Set<TPa_TrainPiece> trainPieces = new HashSet<>(this.getLocomotiveSet());
+        if (this.getWagonSet() != null && !this.getWagonSet().isEmpty()) {
+            trainPieces.addAll(this.getWagonSet());
+        }
         return trainPieces;
+    }
+
+    /**
+     * Validates e.g. whether cyclic order occured or if a wagon is already added to another
+     * train etc. (which is physically not possible).
+     * <p>
+     * To improve: Add semanticValidation also when trains are modified via getter!
+     */
+    public static void semanticValidation(@NotNull Set<Train> validateTrains) {
+        double originalSize = 0;
+        Set<TPa_TrainPiece> allPiecesOfAllTrains = new HashSet<>();
+        for (Train train : validateTrains) {
+            Set<TPa_TrainPiece> mergedSet = train.mergeTrainPiecesToSet();
+            originalSize += mergedSet.size();
+            allPiecesOfAllTrains.addAll(mergedSet);
+        }
+        if (allPiecesOfAllTrains.size() != originalSize) {
+            throw new ConstraintViolation("A train part cannot exist on two or more locations at the same time.");
+        }
     }
 
     //GETTER/SETTER ---------------------

@@ -3,18 +3,23 @@ package trains.train_pieces;
 import actors.Manufacturer;
 import actors.Passenger;
 import actors.TicketCollector;
+import exceptions.ConstraintViolation;
 import helper.SerialNumber;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import sys.SYS_Logger;
+import trains.Item;
 
 import java.time.Year;
 import java.util.HashSet;
 import java.util.Set;
 
 public abstract class TPa_TrainPiece {
-    /** Use of set as every passenger is unique. But order shouldn't matter so a normal (hash-)Set should be enough. */
+    /** Use of set as every passenger is unique. But order shouldn't matter so a normal (hash-)Set should be enough.
+     * Which and how many passengers are currently on the trainpiece? */
     private Set<Passenger> passengerSet;
+    /** How many items are currently on the trainPiece? */
+    private Set<Item> itemSet;
     /** Leergewicht */
     private double emptyWeight;
     private double length;
@@ -57,7 +62,6 @@ public abstract class TPa_TrainPiece {
     }
 
     public TPa_TrainPiece(@Nullable Set<Passenger> passengerSet, @NotNull String typeClassification, @NotNull Manufacturer manufacturer, @NotNull Year buildYear, @NotNull SerialNumber serialNumber, double maxCapacityItems, double emptyWeight, double length, double maxCapacityPassengers) {
-        this.setPassengerSet(passengerSet);
         this.setMaxCapacityItems(maxCapacityItems);
         this.setTypeClassification(typeClassification);
         this.setManufacturer(manufacturer);
@@ -66,6 +70,40 @@ public abstract class TPa_TrainPiece {
         this.setEmptyWeight(emptyWeight);
         this.setLength(length);
         this.setMaxCapacityPassengers(maxCapacityPassengers);
+        this.setPassengerSet(passengerSet); //should be last
+    }
+
+    public TPa_TrainPiece(@Nullable Set<Passenger> passengerSet, @NotNull Set<Item> itemSet, @NotNull String typeClassification, @NotNull Manufacturer manufacturer, @NotNull Year buildYear, @NotNull SerialNumber serialNumber, double maxCapacityItems, double emptyWeight, double length, double maxCapacityPassengers) {
+        this.setMaxCapacityItems(maxCapacityItems);
+        this.setTypeClassification(typeClassification);
+        this.setManufacturer(manufacturer);
+        this.setBuildYear(buildYear);
+        this.setSerialNumber(serialNumber);
+        this.setEmptyWeight(emptyWeight);
+        this.setLength(length);
+        this.setMaxCapacityPassengers(maxCapacityPassengers);
+        this.setItemSet(itemSet); //should be after maxCapacityItems
+        this.setPassengerSet(passengerSet); //should be after maxPassengerSetter
+    }
+
+    /** Validates whether item weights are over the train part limit. */
+    public void isItemLoadOk() {
+        // in kg
+        double sum = 0;
+        for (Item i : this.getItemSet()) {
+            sum += i.getWeight();
+        }
+        if (sum > this.getMaxCapacityItems()) {
+            throw new ConstraintViolation("Your train piece carries too much weight in form of items. Limit:"+this.getMaxCapacityItems()+", onBoard:"+sum);
+        }
+    }
+
+    public void isPassengerLoadOk() {
+        if (passengerSet != null) {
+            if (this.getPassengerSet().size() > this.getMaxCapacityPassengers()) {
+                throw new ConstraintViolation("Your train piece has too much passengers on board. Limit:"+this.getMaxCapacityPassengers()+", onBoard:"+this.getPassengerSet().size());
+            }
+        }
     }
 
     //GETTER/SETTER +++++++++++++++++++++++++++++++++++++++
@@ -86,6 +124,7 @@ public abstract class TPa_TrainPiece {
             this.setTicketCollectorSet(ticketCollectorSet);
         }
         this.passengerSet = passengerSet;
+        isPassengerLoadOk();
     }
 
     public double getMaxCapacityItems() {
@@ -94,7 +133,7 @@ public abstract class TPa_TrainPiece {
 
     public void setMaxCapacityItems(double maxCapacityItems) {
         if (maxCapacityItems < 0) {
-            SYS_Logger.getLogger().warning("MaxCapacity cannot be negative. Have set it anyway!");
+            throw new ConstraintViolation("MaxCapacity cannot be negative.");
         }
         this.maxCapacityItems = maxCapacityItems;
     }
@@ -139,6 +178,9 @@ public abstract class TPa_TrainPiece {
     }
 
     public void setEmptyWeight(double emptyWeight) {
+        if (emptyWeight < 0) {
+            throw new ConstraintViolation("Weight cannot be negative!");
+        }
         this.emptyWeight = emptyWeight;
     }
 
@@ -147,6 +189,9 @@ public abstract class TPa_TrainPiece {
     }
 
     public void setLength(double length) {
+        if (length < 0) {
+            throw new ConstraintViolation("It's logically not possible that the length is negative.");
+        }
         this.length = length;
     }
 
@@ -164,8 +209,17 @@ public abstract class TPa_TrainPiece {
 
     public void setMaxCapacityPassengers(double maxCapacityPassengers) {
         if (maxCapacityPassengers < 0) {
-            SYS_Logger.getLogger().warning("It's logically not possible that a trainpart has a negative capacity for passengers. Have set it!");
+            throw new ConstraintViolation("It's logically not possible that a trainpart has a negative capacity for passengers.");
         }
         this.maxCapacityPassengers = maxCapacityPassengers;
+    }
+
+    public Set<Item> getItemSet() {
+        return itemSet;
+    }
+
+    public void setItemSet(@NotNull Set<Item> itemSet) {
+        this.itemSet = itemSet;
+        isItemLoadOk();
     }
 }

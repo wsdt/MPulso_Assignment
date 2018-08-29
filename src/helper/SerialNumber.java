@@ -50,7 +50,7 @@ public class SerialNumber {
         return uniqueSerialNumbers;
     }
 
-    public static void setUniqueSerialNumbers(Set<String> uniqueSerialNumbers) {
+    public static void setUniqueSerialNumbers(@NotNull Set<String> uniqueSerialNumbers) {
         SerialNumber.uniqueSerialNumbers = uniqueSerialNumbers;
     }
 }

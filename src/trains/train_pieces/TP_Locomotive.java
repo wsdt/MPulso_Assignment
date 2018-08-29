@@ -4,7 +4,9 @@ import actors.Manufacturer;
 import actors.Passenger;
 import helper.SerialNumber;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import propulsion_methods.PMa_PropulsionMethod;
+import trains.Item;
 
 
 import java.time.Year;
@@ -21,16 +23,23 @@ public class TP_Locomotive extends TPa_TrainPiece {
      */
     private PMa_PropulsionMethod propulsionMethod;
 
-    public TP_Locomotive(String typeClassification, Manufacturer manufacturer, Year buildYear, SerialNumber serialNumber,
+    public TP_Locomotive(@NotNull String typeClassification, @NotNull Manufacturer manufacturer, @NotNull Year buildYear, @NotNull SerialNumber serialNumber,
                          double maxCapacityItems, double emptyWeight, double length, double maxCapacityPassengers, double tractionForce, @NotNull PMa_PropulsionMethod propulsionMethod) {
         super(typeClassification, manufacturer, buildYear, serialNumber, maxCapacityItems, emptyWeight, length, maxCapacityPassengers);
         this.setTractionForce(tractionForce);
         this.setPropulsionMethod(propulsionMethod);
     }
 
-    public TP_Locomotive(Set<Passenger> passengerSet, String typeClassification, Manufacturer manufacturer, Year buildYear, SerialNumber serialNumber,
+    public TP_Locomotive(@Nullable Set<Passenger> passengerSet, @NotNull String typeClassification, @NotNull Manufacturer manufacturer, @NotNull Year buildYear, @NotNull SerialNumber serialNumber,
                          double maxCapacityItems, double emptyWeight, double length, double maxCapacityPassengers, double tractionForce, @NotNull PMa_PropulsionMethod propulsionMethod) {
         super(passengerSet, typeClassification, manufacturer, buildYear, serialNumber, maxCapacityItems, emptyWeight, length, maxCapacityPassengers);
+        this.setTractionForce(tractionForce);
+        this.setPropulsionMethod(propulsionMethod);
+    }
+
+    public TP_Locomotive(@Nullable Set<Passenger> passengerSet, @NotNull Set<Item> itemSet, @NotNull String typeClassification, @NotNull Manufacturer manufacturer, @NotNull Year buildYear, @NotNull SerialNumber serialNumber,
+                         double maxCapacityItems, double emptyWeight, double length, double maxCapacityPassengers, double tractionForce, @NotNull PMa_PropulsionMethod propulsionMethod) {
+        super(passengerSet, itemSet, typeClassification, manufacturer, buildYear, serialNumber, maxCapacityItems, emptyWeight, length, maxCapacityPassengers);
         this.setTractionForce(tractionForce);
         this.setPropulsionMethod(propulsionMethod);
     }
@@ -49,7 +58,7 @@ public class TP_Locomotive extends TPa_TrainPiece {
         return propulsionMethod;
     }
 
-    public void setPropulsionMethod(PMa_PropulsionMethod propulsionMethod) {
+    public void setPropulsionMethod(@NotNull PMa_PropulsionMethod propulsionMethod) {
         this.propulsionMethod = propulsionMethod;
     }
 }
